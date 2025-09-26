@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejer01.js"></script>
+    <style>
+        fieldset {
+            width: 350px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        fieldset p {
+            margin-left: 20px;
+        }
+
+        fieldset,
+        legend {
+            padding: 10px;
+            border-radius: 25px;
+            border: 5px ridge gold;
+            background-color: blue;
+            color: white;
+        }
+
+        fieldset input[type="number"] {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Conversión de temperaturas</legend>
+        <p>
+            <label for="fname">Grados centigrados</label>
+            <input type="number" id="gc" value="0">
+            <button onclick="cambio(this,'gc')">+1</button>
+            <!-- pasamos el evento click a propio objeto que es el boton que se identifica con id -->
+            <button onclick="cambio(this,'gc')">-1</button>
+        </p>
+        <p>
+            <label for="fname">Grados Farenheit&nbsp&nbsp&nbsp</label>
+            <input type="number" id="gf" value="0">
+            <button onclick="cambio(this,'gf')">+1</button>
+            <button onclick="cambio(this,'gf')">+1</button>
+        </p>
+        <p>
+            <label for="fname">Grados kelvin&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <input type="number" id="gk" value="0">
+            <button onclick="cambio(this,'gk')">+1</button>
+            <button onclick="cambio(this,'gk')">+1</button>
+        </p>
+    </fieldset>
+</body>
+</html>

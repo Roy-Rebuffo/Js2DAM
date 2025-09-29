@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="calculadora.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>CALCULADORA</legend>
+        <p>
+            <!-- al evento le pasamos el propio objeto -->
+            <input onchange="cambio()" type="number" id="pv" value="0">
+            <select onchange="cambio()" id="operacion">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <!-- al evento le pasamos el propio objeto -->
+            <input onchange="cambio()" type="number" id="sv" value="0">
+        </p>
+        <p>
+            <label for="fname">RESULTADO</label>
+            <!-- al evento le pasamos el propio objeto -->
+            <input onchange="cambio()" type="number" id="RESULTADO" value="0">
+        </p>
+    </fieldset>
+</body>
+</html>

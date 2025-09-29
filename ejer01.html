@@ -8,13 +8,14 @@
     <script src="ejer01.js"></script>
     <style>
         fieldset {
-            width: 350px;
+            width: 400px;
             margin: 20px auto;
             padding: 20px;
         }
 
         fieldset p {
             margin-left: 20px;
+            margin-top: 20px;
         }
 
         fieldset,
@@ -37,23 +38,48 @@
         <legend>Conversión de temperaturas</legend>
         <p>
             <label for="fname">Grados centigrados</label>
-            <input type="number" id="gc" value="0">
-            <button onclick="cambio(this,'gc')">+1</button>
+            <!-- al evento le pasamos el propio objeto -->
+            <input onchange="incremento(this)" type="number" id="gc" value="0">
+            <button onclick="cambio(this,'gc','B')">+1</button>
+            <!-- this es el propio objeto que seria el boton -->
             <!-- pasamos el evento click a propio objeto que es el boton que se identifica con id -->
-            <button onclick="cambio(this,'gc')">-1</button>
+            <button onclick="cambio(this,'gc','B')">-1</button>
+            <select onchange="cambio(this, 'gc','S')">
+                <option value="+10">+10</option>
+                <option value="+5">+5</option>
+                <option value="0">0</option>
+                <option value="+5">-5</option>
+                <option value="+10">-10</option>
+            </select>
         </p>
         <p>
             <label for="fname">Grados Farenheit&nbsp&nbsp&nbsp</label>
-            <input type="number" id="gf" value="0">
-            <button onclick="cambio(this,'gf')">+1</button>
-            <button onclick="cambio(this,'gf')">+1</button>
+            <input onchange="incremento(this)" type="number" id="gf" value="0">
+            <button onclick="cambio(this,'gf','B')">+1</button>
+            <button onclick="cambio(this,'gf','B')">-1</button>
+            <select onchange="cambio(this, 'gc','S')">
+                <option value="+10">+10</option>
+                <option value="+5">+5</option>
+                <option value="0">0</option>
+                <option value="+5">-5</option>
+                <option value="+10">-10</option>
+            </select>
         </p>
         <p>
             <label for="fname">Grados kelvin&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-            <input type="number" id="gk" value="0">
-            <button onclick="cambio(this,'gk')">+1</button>
-            <button onclick="cambio(this,'gk')">+1</button>
+            <input onchange="incremento(this)" type="number" id="gk" value="0">
+            <button onclick="cambio(this,'gk','B')">+1</button>
+            <button onclick="cambio(this,'gk','B')">-1</button>
+            <select onchange="cambio(this, 'gc','S')">
+                <option value="+10">+10</option>
+                <option value="+5">+5</option>
+                <option value="0">0</option>
+                <option value="-5">-5</option>
+                <option value="-10">-10</option>
+            </select>
         </p>
     </fieldset>
 </body>
 </html>
+
+<!-- PRIMER ELEMENTO + SEGUNDO ELEMENTO + SELECT CON LAS OP.(+-*/)+ CUARTO ELEMENTO CON EL RESULTADO -->

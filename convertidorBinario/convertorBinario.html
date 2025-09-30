@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="cargar()">
+    <h2>Style an HTML Form with CSS</h2>
+
+    <form>
+        <label>Numero Entero</label>
+        <input onchange="cambio()" type="text" id="decimal" placeholder="Nº Entero">
+
+        <label>Cambio de base</label>
+         <select onchange="cambio()" id="base"> <!-- me referencio a el como S o selector -->
+            <option value="Binario">Binario</option>
+            <option value="Octal">Octal</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+        </select>
+        <label>Resultado</label>
+        <input type="text" id="resultado" disabled>
+
+        <!-- <input type="submit" value="Submit"> -->
+    </form>
+</body>
+<script src="convertorBinario.js"></script>
+</html>
+
+<br><br><br>
+

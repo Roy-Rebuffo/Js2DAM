@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #marco{
+            width: 50%;
+            margin: 20px auto;
+            font-size: 30px;
+        }
+        table {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        th, td{
+            padding: 10px;
+        }
+        th{
+            background-color: blue;
+            color: white;
+        }
+        tr:nth-child(odd) td{
+            background-color: red;
+        }
+        tr:nth-child(even) td{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body onload="cargar()">
+    <div id="marco">
+
+    </div>
+</body>
+<script src="tablaMult.js"></script>
+</html>

@@ -12,11 +12,12 @@
 
     <form>
         <label>Numero Entero</label>
-        <input onchange="cambio()" type="text" id="decimal" placeholder="Nº Entero">
-
+        <!-- <input onchange="cambio()" type="text" id="decimal" placeholder="Nº Entero"> -->
+        <input onchange="cambio()" type="text" id="binario" placeholder="Nº Binario">
         <label>Cambio de base</label>
          <select onchange="cambio()" id="base"> <!-- me referencio a el como S o selector -->
-            <option value="Binario">Binario</option>
+            <!-- <option value="Binario">Binario</option> -->
+            <option value="Decimal">Decimal</option>
             <option value="Octal">Octal</option>
             <option value="Hexadecimal">Hexadecimal</option>
         </select>

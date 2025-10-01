@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // años divisibles entre 4 que no son divisibles entre cien o son divisibles entre 400;
+        let a = prompt("Dime un año")
+
+        let meses = ["Enero","Feb","Mar","Abr","Mayo","Jun","Jul","Ag","Sep","Oc","Nov","Dic"];
+        let ndias = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+        ndias[1] = bisiesto(parseInt(a)) ? 29 : 28;
+
+        for (let i = 0; i < meses.length; i++) {
+            document.write( i + meses[i] + "------->" + ndias[i] + "<br>" );
+        }
+
+        function bisiesto(n){
+            return n % 4 == 0 && n % 100!=0 || n % 400 == 0;
+        }
+    </script>
+</body>
+</html>

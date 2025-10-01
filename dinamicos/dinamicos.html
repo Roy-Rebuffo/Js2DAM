@@ -7,9 +7,26 @@
     <title>Document</title>
     <script src="dinamicos.js"></script>
 </head>
-
+<style>
+    #marco{
+        margin: 050px auto;
+        width: 500px;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px 0px;
+        padding: 20px;
+        background: #9fbed1;
+        background: linear-gradient(90deg,rgba(159, 190, 209, 1) 0%, rgba(173, 222, 193, 1) 100%, rgba(237, 221, 83, 1) 100%);
+    }
+    select{
+        transition: 500ms;
+    }
+    select:hover{
+        background-color: #9fbed1;
+    }
+</style>
 <body>
-    <div id="marco"></div>
+    <div id="marco">
     <p>
         <label>Año</label>
         <select onchange="cambio()" id="saños"></select>

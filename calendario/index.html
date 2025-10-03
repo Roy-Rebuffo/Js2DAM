@@ -5,16 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    fieldset {
+        border: 2px solid #a3a9ff;
+        border-radius: 12px;
+        padding: 20px;
+        background: #ffffffee;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        width: 70%;
+    }
+
+    legend {
+        font-weight: bold;
+        font-size: 1.3rem;
+        padding: 0 10px;
+        color: #4a4aff;
+    }
+
+    input[type="date"] {
+        padding: 6px 10px;
+        border: 2px solid #a3a9ff;
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 15px;
+    }
+
+    input[type="date"]:focus {
+        border-color: #6b73ff;
+        box-shadow: 0 0 6px #a3a9ff;
+    }
+
+    #marco {
+        margin-top: 15px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    thead th {
+        background: #6b73ff;
+        color: white;
+        padding: 12px;
+        font-weight: bold;
+    }
+
+    tbody td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        transition: background 0.3s ease;
+    }
+
+    tbody tr td:first-child {
+        font-weight: bold;
+        background: #f1f3ff;
+    }
+
+    tbody td:hover {
+        background: #f6f7ff;
+        cursor: pointer;
+    }
+
+    tbody td:empty {
+        background: #fafafa;
+    }
+
+    /* 🎨 Día actual destacado */
+    tbody td.today {
+        background: #ffeded;
+        border: 2px solid #ff5e5e;
+        font-weight: bold;
+        color: #d60000;
+        border-radius: 6px;
+    }
+    div{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);
+        gap: 10px;
+    }
+    p{
+       text-align: center;
+    }
+    select{
+        padding: 10px;
+        border-radius: 10px;
+        transition: 550ms;
+        width: 200px;
+        text-align: center;
+    }
+    select:hover{
+        background-color: #6b73ff;
+        color: white;
+    }
+</style>
+
 <body onload="cargar()">
     <fieldset>
         <legend>calendario</legend>
-            <input type="date" id="fecha">
+        <p>
+            <select id="años" onchange="cambio()">
+                <!-- <option value="2025">2025</option> -->
+            </select>
+        </p>
             <div id="marco">
 
             </div>
     </fieldset>
 </body onload=cargar()>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->
+ <script src="corregido.js"></script>
 </html>
 
 <!-- coger la fecha del sistema (new Date)

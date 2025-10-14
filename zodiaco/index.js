@@ -62,4 +62,4 @@ function cambio() {
     }
 }
 
-windows.onload=()=>{cargar();};
+window.onload=()=>{cargar();};

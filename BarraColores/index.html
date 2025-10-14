@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(145, 223, 233);
+    }
+    .mainContainer{
+        border: 1px solid black;
+        width: 30%;
+        margin: 0 auto;
+        border: 5px solid black;
+        border-radius: 10px;
+        background-color: bisque;
+    }
+    #marco{
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    #colores{
+        height: 100px;
+        width: 100px;
+        border: 3px solid gold;
+        margin: 0 auto;
+    }
+    fieldset{
+        border: 5px solid black;
+        border-radius: 10px;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        background-color: bisque;
+    }
+    fieldset legend{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div class="mainContainer">
+    <div id="marco">
+        <p>Cambio de colores:</p>
+        <div>
+            <label for="rojo">Rojo</label>
+            <input type="range" id="rojo" min="0" max="255" value="255" step="1">
+            <select id="srojo"></select>
+        </div>
+        <div>
+            <label for="verde">Verde</label>
+            <input type="range" id="verde" min="0" max="255" value="255" step="1">
+            <select id="sverde"></select>
+        </div>
+        <div>
+            <label for="azul">Azul</label>
+            <input type="range" id="azul" min="0" max="255" value="255" step="1">
+            <select id="sazul"></select>
+        </div>
+        <div>
+            <label for="alfa">Opacidad</label>
+            <input type="range" id="alfa" min="0" max="10" value="10" step="1">
+            <select id="salfa"></select>
+        </div>
+        <div>
+            <label for="ancho">Ancho</label>
+            <input type="range" id="ancho" min="0" max="100" value="50" step="10">
+            <select id="sancho"></select>
+        </div>
+    </div>
+    </div>
+    <fieldset>
+        <legend>Colores</legend>
+        <p id="textoValores"></p> 
+        <div id="colores">
+        </div>
+    </fieldset>
+    
+</body>
+<script src="index.js"></script>
+</html>

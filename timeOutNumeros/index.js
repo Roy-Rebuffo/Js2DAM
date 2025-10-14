@@ -8,7 +8,14 @@ function cambiar(diferenciaHoraria = dH){
     if(diferenciaHoraria !== 0){ //Si es 0 estamos en madrid
         now.setHours(now.getHours() + diferenciaHoraria);// seteamos la nueva hora
     }
-    let hora = now.toLocaleTimeString();
+    //let hora = now.toLocaleTimeString();
+
+    //comprueba que siempre tenga 9 digitos para que no quede un digito fantasma
+    //Si tiene menos de 2 digitos, pon un 0 delante
+    let h = now.getHours().toString().padStart(2, "0");
+    let m = now.getMinutes().toString().padStart(2, "0");
+    let s = now.getSeconds().toString().padStart(2, "0");
+    let hora = `${h}:${m}:${s}`;
     //document.getElementById("horaString").innerHTML = total
     //let cadena = total[0] + total [1];
     //console.log(cadena)

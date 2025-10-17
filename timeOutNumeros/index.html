@@ -11,20 +11,148 @@
     </style>
 </head>
 <body onload="inicio()">
-    <p style="text-align: center; font-size: 50px;" id="horaString"></p>
+    <main>
+        <style>
+            :root{
+                --bg:#0f1724; /* deep navy */
+                --card:#0b1220;
+                --accent:#06b6d4; /* teal */
+                --muted:#94a3b8;
+                --glass: rgba(255,255,255,0.04);
+                --radius:14px;
+                --mono: 'Segoe UI Mono', 'Courier New', monospace;
+            }
 
-    <p id="ipDigital">
-        <img id="d0">
-        <img id="d1">
-        <img id="d2">
-        <img id="d3">
-        <img id="d4">
-        <img id="d5">
-        <img id="d6">
-        <img id="d7">
-    </p>
+            html,body{
+                height:100%;
+                margin:0;
+                font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.06), transparent 10%),
+                            linear-gradient(180deg, var(--bg), #06101a 70%);
+                color:#e6eef8;
+                -webkit-font-smoothing:antialiased;
+                -moz-osx-font-smoothing:grayscale;
+            }
+
+            main{
+                min-height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                padding:40px 20px;
+            }
+
+            .card{
+                width:min(720px, 94%);
+                background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                border-radius:var(--radius);
+                box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+                padding:28px;
+                border:1px solid rgba(255,255,255,0.03);
+                text-align:center;
+            }
+
+            h1{
+                margin:0 0 8px 0;
+                font-size:22px;
+                letter-spacing:0.6px;
+                color:var(--accent);
+            }
+
+            #horaString{
+                font-size:56px;
+                margin:10px 0 18px 0;
+                font-family: var(--mono);
+                letter-spacing:6px;
+                color:#e6f9fb;
+                text-shadow: 0 6px 18px rgba(6,182,212,0.12);
+            }
+
+            #ipDigital{
+                display:flex;
+                justify-content:center;
+                gap:10px;
+                flex-wrap:wrap;
+                padding-top:6px;
+            }
+
+            #ipDigital img{
+                width:48px;
+                height:64px;
+                object-fit:contain;
+                filter: drop-shadow(0 6px 10px rgba(2,6,23,0.6));
+                transition: transform .18s ease, filter .18s ease;
+                background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                border-radius:8px;
+                padding:6px;
+                border:1px solid rgba(255,255,255,0.025);
+            }
+
+            #ipDigital img:hover{ transform: translateY(-4px) scale(1.03); filter: brightness(1.06); }
+
+            .meta{
+                color:var(--muted);
+                font-size:13px;
+                margin-top:12px;
+            }
+
+            /* styled select for zones */
+            #sZonas{
+                appearance:none;
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                color:inherit;
+                padding:8px 36px 8px 12px;
+                border-radius:10px;
+                border:1px solid rgba(255,255,255,0.04);
+                box-shadow: 0 4px 12px rgba(2,6,23,0.45);
+                font-size:13px;
+                cursor:pointer;
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 20 20'><polyline points='4,7 10,13 16,7' fill='none' stroke='%23e6eef8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                background-size: 14px 14px;
+            }
+
+            #sZonas:hover{ border-color: rgba(255,255,255,0.08); }
+            #sZonas:focus{ outline:none; box-shadow: 0 0 0 4px rgba(6,182,212,0.08); border-color: var(--accent); }
+
+            /* responsive tweaks */
+            @media (max-width:420px){
+                #horaString{ font-size:40px; }
+                #ipDigital img{ width:36px; height:48px; }
+            }
+        </style>
+
+        <section class="card">
+            <h1>Reloj digital</h1>
+            <p id="horaString"></p>
+
+            <div id="ipDigital" aria-hidden="true">
+                <img id="d0">
+                <img id="d1">
+                <img id="d2">
+                <img id="d3">
+                <img id="d4">
+                <img id="d5">
+                <img id="d6">
+                <img id="d7">
+            </div>
+
+            <div class="meta">
+                <select id="sZonas" onchange="cambioZona()">
+                    <option value="Madrid">Madrid</option>
+                    <option value="New_york">Nueva York</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="London">London</option>
+                </select>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 </html>
 
 <!-- coger la hora del sistema en h:m:s y ponerla en digital usar el setInterval -->

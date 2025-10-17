@@ -1,7 +1,21 @@
 let v;
 
-function cambiar(){
-    let hora = (new Date()).toLocaleTimeString();
+// diferencia horaria respecto a la zona base (Madrid)
+let dH = 0;
+
+function cambiar(diferenciaHoraria = dH){
+    const now = new Date();//Hora actual
+    if(diferenciaHoraria !== 0){ //Si es 0 estamos en madrid
+        now.setHours(now.getHours() + diferenciaHoraria);// seteamos la nueva hora
+    }
+    //let hora = now.toLocaleTimeString();
+
+    //comprueba que siempre tenga 9 digitos para que no quede un digito fantasma
+    //Si tiene menos de 2 digitos, pon un 0 delante
+    let h = now.getHours().toString().padStart(2, "0");
+    let m = now.getMinutes().toString().padStart(2, "0");
+    let s = now.getSeconds().toString().padStart(2, "0");
+    let hora = `${h}:${m}:${s}`;
     //document.getElementById("horaString").innerHTML = total
     //let cadena = total[0] + total [1];
     //console.log(cadena)
@@ -22,10 +36,35 @@ function cambiar(){
         //si la hora[i] es ":" ponemos la imagen dosp.png
         //sino la correspondiente
         document.getElementById("d" + i).src = "/num/" + (hora[i] == ":" ? "dosp" : hora[i]) + ".png";
+        
     }
+
 }   
 
+function cambioZona(){
+    // obtiene la opción seleccionada y asigna un offset en horas
+    let sZonas = document.getElementById("sZonas").value;
+    switch(sZonas) {
+        case "Madrid":
+            dH = 0;
+            break;
+        case "New_york":
+            dH = -6;
+            break;
+        case "London":
+            dH = -1;
+            break;
+        case "Tokyo" :
+            dH = 7;
+            break;
+        default:
+            dH = 0;
+    }
+    cambiar();
+}
+
 function inicio(){
+    // el setInterval usa la dH global por defecto
     v=setInterval(()=>{cambiar();},1000)
 }
 

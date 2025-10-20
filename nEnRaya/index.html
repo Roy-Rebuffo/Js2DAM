@@ -6,15 +6,68 @@
     <title>Document</title>
 </head>
 <style>
-    
-</style>
-<body>
-    <p style="text-align: center;">
-        <select id="opciones">
+    body {
+        font-family:Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding-top: 40px;
+    }
 
-        </select>
-    </p>
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        background-color: white;
+    }
+
+    td {
+        border: 2px solid #333;
+        padding: 5px;
+    }
+
+    img {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    input[type="button"] {
+        background-color: #0078d4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    input[type="button"]:hover {
+        background-color: #005fa3;
+    }
+</style>
+<body style="text-align:center; font-family:sans-serif;">
+
+    <h1>N en Raya</h1>
+
+    <!-- Botones de control -->
+    <input type="button" value="Comenzar juego" onclick="pregunta()">
+    <input type="button" value="Volver a jugar" onclick="reiniciarJuego()">
+    
+    <br><br>
+    
+    <!-- Contenedor del tablero -->
     <div id="marco"></div>
+
 </body>
 <script src="index2.js"></script>
 </html>

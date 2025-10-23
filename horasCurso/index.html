@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    fieldset{
+        width: 300px;
+    }
+    .f2{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+</style>
+<body >
+    
+    <fieldset>
+        <legend>Holita</legend>
+
+        <label>Horas del curso</label>
+        <input type="text" id="horas" onchange="calc()">
+        
+        <label>Fecha de Inicio</label>
+        <input type="date" id="fecha">
+
+        <fieldset class="f2" id="horasDisponibles">
+            <legend>Horas/Día</legend>
+            
+        </fieldset>
+        <input type="submit" id="submit" value="Submit">
+    </fieldset>
+
+    <fieldset>
+        <table id="tabla">
+            <!-- <tr>
+            <th>Horas/Día</th>
+            <th>Σ Horas</th>
+            <th>Día</th>
+            <th>Fecha</th>
+            </tr> -->
+
+            <!-- crear tr aqui -->
+            <!-- <tr>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>Jueves</td>
+                <td>27/05/2025</td>
+            </tr> -->
+        </table>
+
+    </fieldset>
+
+    <div id="marco">
+
+    </div>
+</body onload=cargar()>
+<script src="index.js"></script>
+</html>

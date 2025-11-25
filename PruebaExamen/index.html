@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+fieldset {
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #0097a7;
+    background: white;
+}
+
+legend {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #007b83;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+select, input {
+    width: 35%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0097a7;
+    box-shadow: 0 0 5px #00acc1;
+}
+
+td, th {
+    text-align: center;
+    padding: 10px;
+}
+
+</style>
+
+<body>
+    <fieldset>
+        <table>
+            <!-- masa
+        longitud
+        capacidad
+        superficie
+        volumen -->
+            <legend>Conversor de Unidades</legend>
+            <tr>
+                <th>
+                    <select id="sMedidas"></select>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="primero"/>
+                    <input type="text" id="segundo" disabled/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="sUnidades1"></select>
+                    <select id="sUnidades2"></select>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+<script src="index.js"></script>
+</html>

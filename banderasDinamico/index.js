@@ -19,19 +19,19 @@ const provincias = {
     "Canarias": ["El Hierro","Fuerteventura","Gran Canaria","La Gomera","La Palma","Lanzarote","Tenerife"],
     "Cantabria": ["Cantabria/Santander"],
     "Castilla y León": ["Ávila","Burgos","León","Palencia","Salamanca","Segovia","Soria","Valladolid","Zamora"],
-    "Castilla-La Mancha": ["Albacete","Ciudad Real","Cuenca","Guadalajara","Toledo"],
+    "Castilla la Mancha": ["Albacete","Ciudad Real","Cuenca","Guadalajara","Toledo"],
     "Cataluña": ["Barcelona","Girona","Lleida","Tarragona"],
-    "Ceuta y Melilla": ["Ceuta y Melilla"],
+    "Ceuta": ["Ceuta y Melilla"],
     "Comunidad de Madrid": ["Madrid"],
-    "Navarra": ["Navarra/Pamplona"],
+    "Comunidad de Navarra": ["Navarra/Pamplona"],
     "Comunidad Valenciana": ["Alicante","Castellón","Valencia"],
     "Extremadura": ["Badajoz","Cáceres"],
     "Galicia": ["La Coruña","Lugo","Orense","Pontevedra"],
     "Islas Baleares": ["Formentera","Ibiza","Mallorca","Menorca"],
     "La Rioja": ["La Rioja/Logroño"],
-    "País Vasco": ["Álava","Guipúzcoa","Vizcaya"],
-    "Asturias": ["Asturias/Oviedo"],
-    "Región de Murcia": ["Murcia"]
+    "Pais Vasco": ["Álava","Guipúzcoa","Vizcaya"],
+    "Principado de Asturias": ["Asturias/Oviedo"],
+    "Region de Murcia": ["Murcia"]
 };
 
 let cautonomas=["Andalucía",
@@ -58,20 +58,48 @@ function cargar(cA){
     let imagen = document.createElement("img");
 
     imagen.setAttribute("src", "banderas/" + cA + ".gif")
-    destino.appendChild(imagen);
+    imagen.setAttribute("data-comunidad", cA);
 
-    let select = document.getElementById("sprovincias");
+    imagen.addEventListener("click", function() {
+        seleccionarComunidad(this);
+    });
     
-
-    // provincias[select].forEach(c => {
-    //     let opt = document.createElement("option");
-
-    //     opt.value = c;
-    //     opt.text = c;
-
-    //     select.appendChild(opt);
-    // });
+    destino.appendChild(imagen);
+    
 }
+
+function seleccionarComunidad(img){
+    let todas = document.querySelectorAll("#marco img");
+    
+    // Quitar la clase activa de TODAS
+    todas.forEach(i => removeClass(i, "activa"));
+
+    // Activar la bandera seleccionada
+    addClass(img, "activa");
+
+    // Recoger el nombre de la comunidad
+    let comunidad = img.getAttribute("data-comunidad");
+
+    // Mostrar el nombre arriba
+    document.getElementById("comunidad").textContent = comunidad;
+
+    // Rellenar las provincias
+    cargarProvincias(comunidad);
+}
+function cargarProvincias(comunidad){
+    let select = document.getElementById("sprovincias");
+    select.innerHTML = ""; // limpiar
+
+    if(!provincias[comunidad]) return;
+
+    provincias[comunidad].forEach(p => {
+        let opt = document.createElement("option");
+        opt.value = p;
+        opt.text = p;
+        select.appendChild(opt);
+    });
+}
+
 
 window.addEventListener("load", () => {
     cautonomas.forEach((cA) => cargar(cA));

@@ -224,19 +224,15 @@ function mostrarCombinacionFinal() {
 
 /*****************************************************************************************/
 function reset() {
-    // 1️⃣ Limpiamos el tablero
     document.getElementById("marco").innerHTML = "";
 
-    // 2️⃣ Reiniciamos variables de juego
     filaActual = 0;
     posicionActual = 0;
     intentoUsuario = [];
     juegoActivo = true;
-
-    // 3️⃣ Nueva combinación secreta
+    //Volvemos a cargar la nueva combinacion para que no se repita la misma
     cargar(combi);
 
-    // 4️⃣ Volvemos a pintar y activar
     pintar();
     activarColores();
 }
